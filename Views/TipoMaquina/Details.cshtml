@@ -1,0 +1,23 @@
+@model copave.Models.TipoMaquina
+
+@{
+    ViewData["Title"] = "Detalhes da maquina";
+}
+
+<br>
+<div>
+    <h4>Detalhes da Maquina</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+</div>
+<form>
+    <input asp-action="Edit" asp-route-id="@Model.TipoId" type="submit" value="Alterar" class="btn btn-danger" />
+    <input type="submit" asp-action ="Index" value="Voltar" class="btn btn-primary" />
+</form>

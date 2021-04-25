@@ -1,0 +1,25 @@
+@model copave.Models.TipoMaquina
+
+@{
+    ViewData["Title"] = "Exclusão de Tipo";
+}
+
+<h3>Deseja excluir este tipo de maquina?</h3>
+<br>
+<div>
+    <h4>Tipo de Máquina</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+       <form asp-action="Delete">
+        <input type="hidden" asp-for="TipoId" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <input type="submit" asp-action ="Index" value="Voltar" class="btn btn-primary" />
+    </form>
+</div>

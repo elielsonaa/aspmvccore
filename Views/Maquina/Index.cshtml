@@ -1,0 +1,59 @@
+@model IEnumerable<copave.Models.Maquina>
+@{
+    ViewData["Title"] = "Listagem de Maquinas";
+}
+<br>
+<h1>Listagem de Maquinas</h1>
+<br>
+<form class="row g-3"  asp-action="Index" method="GET">
+    <div class="col-auto">
+    <label class="visually-hidden">Número da maquina:</label>
+  </div>
+  <div class="col-auto">
+    <input type="search" class="form-control"  name="bucarMaquina" value=""/>
+  </div>
+  <div class="col-auto">
+    <input type="submit" value="Buscar" class="btn btn-info" />
+  </div>
+</form>
+<br>
+<table class="table table-striped border">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<form class="form-group" method="GET">
+    <input type="submit" asp-action="Create" value="Voltar" class="btn btn-primary" />
+    <input type="submit" asp-action="Index" value="Limpar" class="btn btn-danger" />
+</form>

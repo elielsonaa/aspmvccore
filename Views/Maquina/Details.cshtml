@@ -1,0 +1,41 @@
+@model copave.Models.Maquina
+
+@{
+    ViewData["Title"] = "Detalhes das Maquinas";
+}
+
+<br>
+<div>
+    <h4>Detalhes da Maquina</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipo.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Instalacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Instalacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+</div>
+     <form>
+        <input asp-action="Edit" asp-route-id="@Model.Id" type="submit" value="Alterar" class="btn btn-danger" />
+        <input type="submit" asp-action ="Index" value="Voltar" class="btn btn-primary" />
+    </form>
