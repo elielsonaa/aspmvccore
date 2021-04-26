@@ -31,7 +31,7 @@
             </div>
             <div class="form-group row">
                 <label asp-for="Valor" class="control-label"></label>
-                <input type="number" min="0" step="any" value="0" asp-for="Valor" class="form-control" />
+                <input type="number" id="valor" min="0" step="any" value="0" asp-for="Valor" class="form-control" />
                 @Html.ValidationMessageFor(m => m.Valor, "", new { @class = "text-danger" })
                 <!--<span asp-validation-for="Valor" class="text-danger"></span>-->
             </div>
@@ -43,3 +43,17 @@
         </form>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+    $("#valor").inputmask('decimal', {
+                'alias': 'numeric',
+                'groupSeparator': ',',
+                'autoGroup': true,
+                'digits': 2,
+                'radixPoint': ".",
+                'digitsOptional': false,
+                'allowMinus': false,
+                'prefix': 'R$ ',
+                'placeholder': '0'
+    });
+</script>

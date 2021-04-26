@@ -21,6 +21,7 @@ namespace copave.Models
         public DateTime Instalacao { get; set; }
 
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         [Display(Name = "Valor da Compra")]
         [Range(1, double.MaxValue, ErrorMessage = "O valor da compra tem que ser mior que 0")]
         public decimal Valor { get; set; }
