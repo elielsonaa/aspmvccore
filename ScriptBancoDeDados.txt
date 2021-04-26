@@ -30,13 +30,13 @@ CREATE TABLE [dbo].[Maquina](
     [Descricao] [varchar](200) NOT NULL,
     [TipoId] int NOT NULL,
     [Instalacao] [date] NOT NULL,
-    [Valor] decimal(16,2) NOT NULL NOT NULL
+    [Valor] decimal(18,2) NOT NULL NOT NULL
     FOREIGN KEY(TipoId)REFERENCES TipoMaquina (TipoId)
 )
 --Cria um usuário para não precisar ter que reconfigurar a string de conexão no sistema
 USE master
 GO
-CREATE LOGIN copave WITH PASSWORD=N'C0p@v3970!0', DEFAULT_DATABASE=Copave
+CREATE LOGIN copave WITH PASSWORD=N'C0p@v3', DEFAULT_DATABASE=Copave
 GO
 ALTER LOGIN copave ENABLE
 GO
