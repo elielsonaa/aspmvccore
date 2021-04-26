@@ -58,6 +58,7 @@ namespace Controllers
         {
             if (ModelState.IsValid)
             {
+                tipoMaquina.Descricao = tipoMaquina.Descricao.ToUpper();
                 _context.Add(tipoMaquina);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -78,6 +79,7 @@ namespace Controllers
             {
                 return NotFound();
             }
+            tipoMaquina.Descricao = tipoMaquina.Descricao.ToUpper();
             return View(tipoMaquina);
         }
 
@@ -97,6 +99,7 @@ namespace Controllers
             {
                 try
                 {
+                    tipoMaquina.Descricao = tipoMaquina.Descricao.ToUpper();
                     _context.Update(tipoMaquina);
                     await _context.SaveChangesAsync();
                 }
