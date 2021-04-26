@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[Maquina](
     [Descricao] [varchar](200) NOT NULL,
     [TipoId] int NOT NULL,
     [Instalacao] [date] NOT NULL,
-    [Valor] [decimal] NOT NULL
+    [Valor] decimal(16,2) NOT NULL NOT NULL
     FOREIGN KEY(TipoId)REFERENCES TipoMaquina (TipoId)
 )
 --Cria um usuário para não precisar ter que reconfigurar a string de conexão no sistema

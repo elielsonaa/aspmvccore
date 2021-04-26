@@ -156,5 +156,9 @@ namespace Controllers
         {
             return _context.Maquina.Any(e => e.Id == id);
         }
+        private string Clearchar(string valor)
+        {
+            return valor.Replace(".", string.Empty);
+        }
     }
 }
