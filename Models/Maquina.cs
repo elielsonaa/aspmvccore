@@ -15,15 +15,16 @@ namespace copave.Models
         public int TipoId { get; set; }
         public virtual TipoMaquina Tipo {get;set;}
        
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Required(ErrorMessage = "A Data de instalação é obrgatória")]
         [Display(Name = "Data da Instalação")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Instalacao { get; set; }
 
-        [DataType(DataType.Currency)]
+        //[DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18, 2)")]
-        [Display(Name = "Valor da Compra")]
-        [Range(1, double.MaxValue, ErrorMessage = "O valor da compra tem que ser mior que 0")]
+        [Display(Name = "Valor da Compra R$")]
+        [Required(ErrorMessage = "O campo valor é obrigatório")]
+        [Range(1, 999999999, ErrorMessage = "O valor da compra tem que ser mior que 0")]
         public decimal Valor { get; set; }
     }
 }

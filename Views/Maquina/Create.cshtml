@@ -12,28 +12,24 @@
             <div class="form-group row">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
-                @Html.ValidationMessageFor(m => m.Descricao, "", new { @class = "text-danger" })
-                <!--<span asp-validation-for="Descricao" class="text-danger"></span>-->
+                <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group row">
                 <label asp-for="Tipo" class="control-label"></label>
                 <select asp-for="TipoId" class="form-control" asp-items="ViewBag.TipoId">
                     <option value="0"></option>
                 </select>
-                @Html.ValidationMessageFor(m => m.TipoId, "", new { @class = "text-danger" })
-                <!-- <span asp-validation-for="TipoId" class="text-danger"></span> -->
+                <span asp-validation-for="TipoId" class="text-danger"></span> 
             </div>
             <div class="form-group row">
                 <label asp-for="Instalacao" class="control-label"></label>
-                <input asp-for="Instalacao" class="form-control" name='datetimepicker'/>
-                @Html.ValidationMessageFor(m => m.Instalacao, "", new { @class = "text-danger" })
-                <!--<span asp-validation-for="Instalacao" class="text-danger"></span>-->
+                <input asp-for="Instalacao" class="form-control"/>
+                <span asp-validation-for="Instalacao" class="text-danger"></span>
             </div>
             <div class="form-group row">
                 <label asp-for="Valor" class="control-label"></label>
-                <input type="number" id="valor" min="0" step="any" value="0" asp-for="Valor" class="form-control" />
-                @Html.ValidationMessageFor(m => m.Valor, "", new { @class = "text-danger" })
-                <!--<span asp-validation-for="Valor" class="text-danger"></span>-->
+                <input asp-for="Valor" type="currency" id="valor" class="form-control"/>
+                <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success" />
@@ -43,17 +39,10 @@
         </form>
     </div>
 </div>
+@section Scripts {
 <script>
-    $(document).ready(function(){
-    $("#valor").inputmask('decimal', {
-                'alias': 'numeric',
-                'groupSeparator': ',',
-                'autoGroup': true,
-                'digits': 2,
-                'radixPoint': ".",
-                'digitsOptional': false,
-                'allowMinus': false,
-                'prefix': 'R$ ',
-                'placeholder': '0'
-    });
+   $(document).ready(function(){
+      $("#valor").maskMoney();
+   });
 </script>
+}
