@@ -13,6 +13,9 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Id)
         </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Descricao)
         </dt>
@@ -23,8 +26,8 @@
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo.TipoId)
-        </dd class>
+            @Html.DisplayFor(model => model.Tipo.Descricao)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Instalacao)
         </dt>

@@ -24,12 +24,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Instalacao" class="control-label"></label>
-                <input asp-for="Instalacao" class="form-control" />
+                <input asp-for="Instalacao" class="form-control" id="datepicker" />
                 <span asp-validation-for="Instalacao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Valor" class="control-label"></label>
-                <input asp-for="Valor" class="form-control" />
+                <input asp-for="Valor" data-thousands="." data-decimal=","  type="currency" id="valor" class="form-control"/>
                 <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,3 +39,10 @@
         </form>
     </div>
 </div>
+@section Scripts {
+<script>
+   $(document).ready(function(){
+      $("#valor").maskMoney();
+   });
+</script>
+}
