@@ -11,6 +11,7 @@ namespace copave.Models
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Você deve informar o tipo da Maquina")]
+        [Range(1, int.MaxValue, ErrorMessage = "Escolha um tipo de maquina")]
         public int TipoId { get; set; }
         public virtual TipoMaquina Tipo {get;set;}
        
