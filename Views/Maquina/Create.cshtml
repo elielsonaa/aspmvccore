@@ -8,7 +8,7 @@
 <hr />
 <div class="row justify-content-md-center">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" id="myforms">
             <div class="form-group row">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
@@ -34,7 +34,7 @@
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success" />
                 <input type="submit" asp-action="Index" value="Listar" class="btn btn-primary" />
-                <input type="submit" asp-action="Create" value="Limpar" class="btn btn-danger" />
+                <input type="reset"  value="Limpar" class="btn btn-danger" />
             </div>
         </form>
     </div>
