@@ -61,6 +61,9 @@ namespace Controllers
                 tipoMaquina.Descricao = tipoMaquina.Descricao.ToUpper();
                 _context.Add(tipoMaquina);
                 await _context.SaveChangesAsync();
+                TempData["Message"] = "Tipo cadastrado com sucesso!";
+                TempData["Titulo"] = "Parabens!";
+                TempData["Tipo"] = "success";
                 return RedirectToAction(nameof(Index));
             }
             return View(tipoMaquina);
@@ -114,6 +117,10 @@ namespace Controllers
                         throw;
                     }
                 }
+                TempData["Message"] = "Registro alterado com sucesso!";
+                TempData["Titulo"] = "Parabens!";
+                TempData["Tipo"] = "success";
+
                 return RedirectToAction(nameof(Index));
             }
             return View(tipoMaquina);
@@ -145,6 +152,9 @@ namespace Controllers
             var tipoMaquina = await _context.TipoMaquina.FindAsync(id);
             _context.TipoMaquina.Remove(tipoMaquina);
             await _context.SaveChangesAsync();
+            TempData["Message"] = "Registro deletado com sucesso!";
+            TempData["Titulo"] = "Oops!";
+            TempData["Tipo"] = "success";
             return RedirectToAction(nameof(Index));
         }
 

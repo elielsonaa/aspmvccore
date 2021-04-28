@@ -64,6 +64,9 @@ namespace Controllers
                 maquina.Descricao = maquina.Descricao.ToUpper();
                 _context.Add(maquina);
                 await _context.SaveChangesAsync();
+                TempData["Message"] = "Maquina adicionada com sucesso!";
+                TempData["Titulo"] = "Parabens!";
+                TempData["Tipo"] = "success";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TipoId"] = new SelectList(_context.TipoMaquina, "TipoId", "Descricao", maquina.TipoId);
@@ -118,6 +121,9 @@ namespace Controllers
                         throw;
                     }
                 }
+                TempData["Message"] = "Registro alterado com sucesso!";
+                TempData["Titulo"] = "Parabens!";
+                TempData["Tipo"] = "success";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TipoId"] = new SelectList(_context.TipoMaquina, "TipoId", "Descricao", maquina.TipoId);
@@ -149,16 +155,15 @@ namespace Controllers
             var maquina = await _context.Maquina.FindAsync(id);
             _context.Maquina.Remove(maquina);
             await _context.SaveChangesAsync();
+            TempData["Message"] = "Registro deletado com sucesso!";
+            TempData["Titulo"] = "Oops!";
+            TempData["Tipo"] = "success";
             return RedirectToAction(nameof(Index));
         }
 
         private bool MaquinaExists(int id)
         {
             return _context.Maquina.Any(e => e.Id == id);
-        }
-        private string Clearchar(string valor)
-        {
-            return valor.Replace(".", string.Empty);
         }
     }
 }

@@ -2,8 +2,18 @@
 
 @{
     ViewData["Title"] = "Tipo de Maquina";
+    var titulo = @TempData["Titulo"];
+    var message = @TempData["Message"];
+    var tipo = @TempData["Tipo"];
 }
-
+<script type="text/javascript">
+    var message = '@message';
+    var tipo = '@tipo';
+    var titulo = '@titulo';
+    if(message.length > 0 && tipo.length > 0 && titulo.length > 0){
+        swal(titulo, message, tipo);
+}
+</script>
 <h1>Tipos de Maquinas</h1>
 <br>
 <table class="table">
