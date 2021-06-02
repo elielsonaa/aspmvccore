@@ -52,8 +52,8 @@ info: Microsoft.Hosting.Lifetime[0]
 
 **_USO DAS TECNOLOGIAS_**
 
-Embora tenha pouco conhecimento em asp.NET MVC para desenvolvimento de aplicações fontend, optei por utilizá-lo em razão do conhecimento em **C#** e por já utilizar o .NET Core para criação de APIs em conjunto com Angular e Vuejs
+Desenvolvido com asp.NET MVC 5.0 **C#** e**Bootstrap**
 
 ---
 
-**OBRIGADO PELA OPORUNIDADE**
+**OBRIGADO**
