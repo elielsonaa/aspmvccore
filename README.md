@@ -1,4 +1,4 @@
-**SISTEMA DE CADASTRO DE MAQUINAS COPAVE**
+**CRUD SISTEMA DE CADASTRO DE MAQUINAS**
 
 ---
 
@@ -52,7 +52,7 @@ info: Microsoft.Hosting.Lifetime[0]
 
 **_USO DAS TECNOLOGIAS_**
 
-Desenvolvido com asp.NET MVC 5.0 **C#** e**Bootstrap**
+Desenvolvido com asp.NET MVC 5.0 **C#** e**Bootstrap**  e **EntityFrameeork** e **SQL Server**
 
 ---
 
